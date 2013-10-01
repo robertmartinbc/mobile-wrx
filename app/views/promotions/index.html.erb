@@ -1,7 +1,33 @@
-<h1>All Promotions</h1>
+  <center>
+<div>
+    <br>
+  <h1><%= image_tag("mobilewrxlogo.jpg") %></h1>
+  <br>
+   <h5>Here are the lates promotions!</h5>
+<div>
 	<% if can? :create, Promotion %>
 		<%= link_to "New Promotion", new_promotion_path, class: 'btm btn-primary btn-mini' %>
 	<% end %>
+</div>
+<br>
 <% @promotions.each do |promotion| %>
-<p><%= link_to promotion.title, promotion %></p>
+	<div class="span3">
+		<div class="thumbnail">
+			<p align="center"><%= promotion.title %></p>
+			<p align="center"><%= promotion.description %></p>
+			<p align="center"><%= promotion.price %></p>
+			<p align="center"><%= promotion.expiration %></p>
+			<p align="center"><%= link_to promotion.website %></p>
+			<p align="center"><a href="#" class="btn btn-mini">More</a></p>
+
+		</div>
+		<br>
+	</div>
+
 <% end %>
+<br>
+</center>
+
+
+
+

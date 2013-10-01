@@ -1,6 +1,20 @@
+<div>
+  <center>
+    <br>
+  <h1><%= image_tag("mobilewrxlogo.jpg") %></h1>
+  <br>
+  <h5>Please fill out the form below describing your promotion.</h5>
+<br>
+<br>
 <%= simple_form_for @promotion do |f| %>
 	<%= f.input :title, label: false, placeholder: 'Title' %>
-	<%= f.input :description, :input_html => { :rows => 2}, label: false, placeholder: 'Enter description' %>
+	<%= f.input :description, :input_html => { :rows => 2}, label: false, placeholder: 'Enter Brief description: no more than 30 characters' %>
+	<%= f.input :price, label: false, placeholder: 'Price' %>
+	<%= f.input :expiration, label: false, placeholder: 'Expiry Date' %>
+	<%= f.input :website, label: false, placeholder: 'Website' %>
 	<%= f.file_field :image %>
+	<br>
+	<br>
 	<%= f.submit %>
 	<% end %>
+</div>
