@@ -1,0 +1,4 @@
+<h1>All Promotions</h1>
+<% @promotions.each do |promotion| %>
+<p><%= link_to promotion.title, promotion %></p>
+<% end %>
