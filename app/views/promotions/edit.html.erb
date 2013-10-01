@@ -1,2 +1,5 @@
-<h1>Promotions#edit</h1>
-<p>Find me in app/views/promotions/edit.html.erb</p>
+<%= simple_form_for @promotion do |f| %>
+	<%= f.input :title, label: false, placeholder: 'Title' %>
+	<%= f.input :description, :input_html => { :rows => 2}, label: false, placeholder: 'Enter description' %>
+	<%= f.submit %>
+	<% end %>
