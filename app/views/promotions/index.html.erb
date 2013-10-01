@@ -1,4 +1,7 @@
 <h1>All Promotions</h1>
+	<% if can? :create, Promotion %>
+		<%= link_to "New Promotion", new_promotion_path, class: 'btm btn-primary btn-mini' %>
+	<% end %>
 <% @promotions.each do |promotion| %>
 <p><%= link_to promotion.title, promotion %></p>
 <% end %>
