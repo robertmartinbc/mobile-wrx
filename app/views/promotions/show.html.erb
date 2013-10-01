@@ -2,6 +2,6 @@
 
 <p><%= @promotion.description %></p>
 
-
+ <p><%= image_tag(@promotion.image_url) if @promotion.image? %></p>
 <%= link_to "Edit", edit_promotion_path(@promotion), class: 'btn btn-mini' %>
 

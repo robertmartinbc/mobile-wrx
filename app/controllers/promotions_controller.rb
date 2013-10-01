@@ -13,7 +13,7 @@ class PromotionsController < ApplicationController
   end
 
   def create
-  @promotion = Promotion.new(params[:promotion])
+  @promotion = current_user.promotions.build(params[:promotion])
   # authorize! :create, @promotion, message: "You need to be signed up to do that."
   if @promotion.save
     flash[:notice] = "Promotion was saved."

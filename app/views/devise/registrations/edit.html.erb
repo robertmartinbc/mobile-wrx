@@ -15,6 +15,11 @@
     <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
   </div>
 
+  <div>
+    <%= image_tag(current_user.avatar.small.url) if current_user.avatar? %>
+      <%= f.file_field :avatar %>
+    </div>
+
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
   </div>
