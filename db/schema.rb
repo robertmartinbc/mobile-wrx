@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131001014013) do
+ActiveRecord::Schema.define(:version => 20131001020952) do
 
   create_table "promotions", :force => true do |t|
     t.string   "title"
@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(:version => 20131001014013) do
     t.string   "qrcode"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
   end
+
+  add_index "promotions", ["user_id"], :name => "index_promotions_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
