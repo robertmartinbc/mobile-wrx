@@ -8,6 +8,7 @@
         <p><%= @promotion.price %></p>
         <p><%= @promotion.expiration %></p>
         <p><%= @promotion.website %></p>
+        <p><%= image_tag(@promotion.qrcode_url) if @promotion.qrcode? %></p>
         <p><a href="#" class="btn btn-default">Buy</a></p>
       </div>
     </div>

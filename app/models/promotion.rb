@@ -4,6 +4,7 @@ class Promotion < ActiveRecord::Base
   belongs_to :user
 
   mount_uploader :image, ImageUploader
+  mount_uploader :qrcode, QrcodeUploader
 
   default_scope order('created_at DESC')
 end

@@ -19,7 +19,8 @@
 			<p align="center"><%= promotion.price %></p>
 			<p align="center"><%= promotion.expiration %></p>
 			<p align="center"><%= link_to promotion.website %></p>
-			<p align="center"><a href="#" class="btn btn-mini">More</a></p>
+			<p><%= image_tag(promotion.qrcode_url) %></p>
+			<p align="center"><a href="#" class="btn btn-mini btn-primary">More</a></p>
 
 		</div>
 		<br>
