@@ -13,6 +13,7 @@
 <% @promotions.each do |promotion| %>
 	<div class="span3">
 		<div class="thumbnail">
+			<p><%= image_tag(promotion.image_url) %></p>
 			<p align="center"><%= promotion.title %></p>
 			<p align="center"><%= promotion.description %></p>
 			<p align="center"><%= promotion.price %></p>
