@@ -4,12 +4,13 @@
   <h1><%= image_tag("mobilewrxlogo.jpg") %></h1>
   <br>
    <h5>Here are the latest promotions!</h5>
-
+<BR>
 		<% if can? :create, Promotion %>
-		<%= link_to "New Promotion", new_promotion_path, class: 'btm btn-primary btn-mini' %>
+		<%= link_to "New Promotion", new_promotion_path, class: 'btm btn-primary btn-large' %>
 	<% end %>
 </center>
 <br>
+<BR>
 <% @promotions.each do |promotion| %>
 <div class="row">
 	<div class="span3">
