@@ -8,5 +8,13 @@ class Promotion < ActiveRecord::Base
 
   default_scope order('created_at DESC')
 
+  validates :title, length: { maximum: 20 }, presence: true
+  validates :description, length: { maximum: 25 }, presence: true
+  validates :price, presence: true
+  validates :expiration, presence: true
+  validates :website, presence: true
+  validates :image, presence: true
+  validates :qrcode, presence: true
+
   scope :visible_to, lambda { |user| user ? scoped : joins(:promotion).where('promotions.public' => true) }
 end
