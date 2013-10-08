@@ -1,0 +1,13 @@
+<div class="media">
+  <%= link_to [promotion], class: 'pull-left' do %>
+  <% end %>
+  <div class="media-body">
+    <h4 class="media-heading">
+    </h4>
+    <small>
+      <%= promotion.title %>
+      submitted <%= time_ago_in_words(promotion.created_at) %> ago by
+      <%= link_to promotion.user.name, promotion.user %><br/>
+    </small>
+  </div>
+</div>

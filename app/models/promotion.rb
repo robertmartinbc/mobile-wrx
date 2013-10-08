@@ -7,4 +7,6 @@ class Promotion < ActiveRecord::Base
   mount_uploader :qrcode, QrcodeUploader
 
   default_scope order('created_at DESC')
+
+  scope :visible_to, lambda { |user| user ? scoped : joins(:promotion).where('promotions.public' => true) }
 end

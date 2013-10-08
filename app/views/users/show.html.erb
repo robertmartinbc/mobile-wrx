@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="span12">
+    <div class="media">
+      <% if @user.avatar? %>
+        <%= image_tag @user.avatar.url, class: 'pull-left', class: "img-rounded" %>
+      <% end %>
+      <div class="media-body">
+        <h2 class="media-heading"><%= @user.name %></h2>
+        <small>
+          <%= pluralize(@user.promotions.count, 'promotions') %>
+        </small>
+      </div>
+    </div>
+    <% if can? :create, Promotion %>
+    <%= link_to "New Promotion", new_promotion_path, class: 'btm btn-primary' %>
+  <% end %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="tabbable">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#promotions" data-toggle="tab">Promotions</a></li>
+      <li><a href="#promotions" data-toggle="tab">Profile</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="promotions">
+        <%= render @promotions %>
+      </div>
+      <div class="tab-pane" id="comments">
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,8 @@ MobileWrx::Application.routes.draw do
 
   devise_for :users
 
+  resources :users, only: [:show]
+
   resources :promotions
 
   match "promotions" => "welcome#promotions", via: :get
